@@ -59,7 +59,7 @@ When using MCP tools that can return large or noisy payloads, always delegate to
 - **Slack** (`mcp__slack__*`) — channel history, thread replies
 - **Atlassian** (`mcp__atlassian__*`) — Jira issue searches, Confluence pages
 
-Use the `general-purpose` subagent type with `model: sonnet`, brief it with the exact query, and have it return a structured summary. Only bypass subagent delegation when the query is trivially small (e.g., fetching a single known Jira ticket by ID).
+Use the `general-purpose` subagent type with `model: haiku`, brief it with the exact query, and have it return a structured summary. Only bypass subagent delegation when the query is trivially small (e.g., fetching a single known Jira ticket by ID).
 
 ## Designing software
 
