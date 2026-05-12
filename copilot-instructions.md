@@ -50,6 +50,17 @@ Only pause to ask for confirmation when:
 - For expensive commands, capture the full output once (file or buffer) and run multiple searches against that output instead of rerunning the command.
 - Avoid truncating expensive command output to a small line window when broader reuse is likely.
 
+## MCP Tools
+
+When using MCP tools that can return large or noisy payloads, always delegate to a subagent and return only a concise summary to the main context. This applies to:
+
+- **AWS** (`mcp__aws-smilecloud-*`) — CloudWatch logs, resource listings, query results
+- **Sentry** (`mcp__sentry__*`) — issue details, event lists, stack traces
+- **Slack** (`mcp__slack__*`) — channel history, thread replies
+- **Atlassian** (`mcp__atlassian__*`) — Jira issue searches, Confluence pages
+
+Use the `general-purpose` subagent type, brief it with the exact query, and have it return a structured summary. Only bypass subagent delegation when the query is trivially small (e.g., fetching a single known Jira ticket by ID).
+
 ## Designing software
 
 - YAGNI. The best code is no code. Don't add features we don't need right now.
