@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(ls:*)",
@@ -102,9 +105,8 @@
     "type": "command",
     "command": "bash /Users/horiaradu/.claude/statusline.sh"
   },
+  "effortLevel": "xhigh",
   "theme": "dark",
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  },
-  "model": "sonnet"
+  "tui": "fullscreen",
+  "model": "opus[1m]"
 }
